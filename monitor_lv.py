@@ -106,10 +106,10 @@ while(True):
 
 	# push the points into the specified InfluxDB account
 	try:
-		write_api.write(bucket=bucket, org=ORG, record=p1)
-		write_api.write(bucket=bucket, org=ORG, record=p2)
-		write_api.write(bucket=bucket, org=ORG, record=p3)
-		write_api.write(bucket=bucket, org=ORG, record=p4)
+#		write_api.write(bucket=bucket, org=ORG, record=p1)
+#		write_api.write(bucket=bucket, org=ORG, record=p2)
+#		write_api.write(bucket=bucket, org=ORG, record=p3)
+#		write_api.write(bucket=bucket, org=ORG, record=p4)
 	except urllib3.exceptions.ReadTimeoutError:
 		continue
 		
