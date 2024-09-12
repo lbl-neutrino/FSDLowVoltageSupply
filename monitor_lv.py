@@ -14,7 +14,7 @@ import os
 # sending to InfluxDB
 import subprocess
 
-# InfluxDB is the database used to store slow control readings
+# influxDB is the database on labpix used by grafana to monitor controls
 import influxdb_client
 from influxdb_client.client.write_api import SYNCHRONOUS
 
