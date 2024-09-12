@@ -15,8 +15,8 @@ import os
 import subprocess
 
 # influxDB is the database on labpix used by grafana to monitor controls
-import influxdb_client
-from influxdb_client.client.write_api import SYNCHRONOUS
+# import influxdb_client
+# from influxdb_client.client.write_api import SYNCHRONOUS
 
 # urllib3 has functions that will help with timeout url problems
 import urllib3
@@ -34,7 +34,7 @@ ORG = "lhep"
 URL = "http://130.92.128.162:8086"
 bucket = "fsd_sc"
 measurement = "lv-controls"
-TOKEN = "a1gkXTPILBYrhxLFb56DN4zezih1qwliiER5DZB-wZOM3ahy50sbXX0QoCTqjo2V-lefgWQbu-PFKT6p-_Ugow=="
+# TOKEN =
 
 # create InfluxDB names
 v1_label = "lv reading"
@@ -47,10 +47,10 @@ c2_label = "current setting"
 #######################################################################
 
 # sign into InfluxDB
-client = influxdb_client.InfluxDBClient(url=URL, token=TOKEN, org=ORG)
+# client = influxdb_client.InfluxDBClient(url=URL, token=TOKEN, org=ORG)
 
 # prepare InfluxDB to accept data
-write_api = client.write_api(write_options=SYNCHRONOUS)
+# write_api = client.write_api(write_options=SYNCHRONOUS)
 
 #######################################################################
 # main
@@ -99,10 +99,10 @@ while(True):
 	print(f"Readings     {voltage:.4f} V      {current:.4f} A")
 
 	# create data points to send to InfluxDB
-	p1 = influxdb_client.Point(measurement).field(v1_label, voltage)
-	p2 = influxdb_client.Point(measurement).field(v2_label, voltage_set)
-	p3 = influxdb_client.Point(measurement).field(c1_label, current)
-	p4 = influxdb_client.Point(measurement).field(c2_label, current_set)
+#	p1 = influxdb_client.Point(measurement).field(v1_label, voltage)
+#	p2 = influxdb_client.Point(measurement).field(v2_label, voltage_set)
+#	p3 = influxdb_client.Point(measurement).field(c1_label, current)
+#	p4 = influxdb_client.Point(measurement).field(c2_label, current_set)
 
 	# push the points into the specified InfluxDB account
 	try:
