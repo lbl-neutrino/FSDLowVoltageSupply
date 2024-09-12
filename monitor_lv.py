@@ -110,6 +110,7 @@ while(True):
 #		write_api.write(bucket=bucket, org=ORG, record=p2)
 #		write_api.write(bucket=bucket, org=ORG, record=p3)
 #		write_api.write(bucket=bucket, org=ORG, record=p4)
+		print(" ")
 	except urllib3.exceptions.ReadTimeoutError:
 		continue
 		
